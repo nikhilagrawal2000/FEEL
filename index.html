@@ -12,7 +12,7 @@
 
 		<a-sky src="#sky"></a-sky>
 
-		<a-text value="Hello"></a-text>
+		<a-text value="Hello" geometry="primitive:plane"></a-text>
 
 		<a-camera position="0 7 5">
 			<a-cursor color="0000FF" fuseTimeout="2000"></a-cursor>
@@ -24,7 +24,7 @@
 		var textfield = document.queryselector('a-text');
 		textfield.addEventListener('fusing', function(){
 			textfield.value="Clicked";
-		})
+		});
 	</script>
 </body>
 </html>
