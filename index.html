@@ -2,6 +2,7 @@
 <head>
 	<title>FEEL</title>
 	<script type="text/javascript" src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
+	<script src="https://rawgit.com/bryik/aframe-bmfont-text-component/master/dist/aframe-bmfont-text-component.min.js"></script>
 </head>
 <body>
 	<a-scene>
@@ -12,7 +13,7 @@
 
 		<a-sky src="#sky"></a-sky>
 
-		<a-text value="Hello" geometry="primitive:plane"></a-text>
+		<a-entity text="value: Hello; font: https://cdn.aframe.io/fonts/Roboto-msdf.json;" id="textid"></a-entity>
 
 		<a-camera position="0 7 5">
 			<a-cursor color="0000FF" fuseTimeout="2000"></a-cursor>
@@ -21,7 +22,7 @@
 	</a-scene>
 
 	<script type="text/javascript">
-		var textfield = document.queryselector('a-text');
+		var textfield = document.getElementById('textid');
 		textfield.addEventListener('fusing', function(){
 			textfield.value="Clicked";
 		});
