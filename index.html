@@ -5,7 +5,10 @@
 </head>
 <body>
 	<a-scene>
-		<a-sky src="img/sky.jpeg"></a-sky>
+		<a-assets>
+			<img src="img/sky.jpg" id="sky"/>
+		</a-assets>
+		<a-sky src="#sky"></a-sky>
 	</a-scene>
 </body>
 </html>
