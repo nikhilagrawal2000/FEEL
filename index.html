@@ -5,10 +5,26 @@
 </head>
 <body>
 	<a-scene>
+
 		<a-assets>
 			<img src="img/sky.jpg" id="sky"/>
 		</a-assets>
+
 		<a-sky src="#sky"></a-sky>
+
+		<a-text value="Hello"></a-text>
+
+		<a-camera position="0 7 5">
+			<a-cursor color="0000FF" fuseTimeout="2000"></a-cursor>
+		</a-cursor>
+
 	</a-scene>
+
+	<script type="text/javascript">
+		var textfield = document.queryselector('a-text');
+		textfield.addEventListener('fusing', function(){
+			textfield.value="Clicked";
+		})
+	</script>
 </body>
 </html>
