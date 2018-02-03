@@ -6,11 +6,16 @@
 </head>
 
 <body>
-
+	<iframe id="pdfbtn">
+		<button onclick="getpdf()"></button>
+	</iframe>
 	<button onclick="submit()">Submit</button>
 	<script type="text/javascript">
 		function submit(){
 			window.location.assign("https://narendrakpatel.github.io/FEEL/vr.html")
+		}
+		function getpdf(){
+			document.getElementById("pdfbtn").setAttribute("src","https://drive.google.com/open?id=1KBq5S_Pk-uPYq82Gbu9Pa1tMVwvMPOB8CvkqZfyEKanxb0SIaLcs76OFMILJlNH-RBBAy0bfEwqNGfOA")
 		}
 	</script>
 </body>
