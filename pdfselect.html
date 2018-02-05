@@ -55,7 +55,9 @@
 
             console.log(pdf.pdfInfo.numPages)
             console.log(pdf)
-            pdf.getPage(0).then(function getPageHelloWorld(page) {
+            var i;
+            for (i = 1; i < (pdf.pdfInfo.numPages + 1); ++i){
+            pdf.getPage(i).then(function getPageHelloWorld(page) {
               var scale = 1.5;
               var viewport = page.getViewport(scale);
               //
