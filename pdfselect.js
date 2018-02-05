@@ -38,3 +38,8 @@ PDFJS.disableWorker = true;
         fileReader.readAsArrayBuffer(file);
       }
     }
+
+
+function logout(){
+  firebase.auth().signOut();
+}
