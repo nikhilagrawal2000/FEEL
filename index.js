@@ -12,8 +12,6 @@ firebase.auth().onAuthStateChanged(function(user) {
     // No user is signed in.
 
     document.getElementById("user_div").style.display = "none";
-    document.getElementById("register_div").style.display = "block";
-
   }
 });
 
@@ -31,25 +29,5 @@ function login(){
 
     // ...
   });
-
-}
-
-function register(){
-  document.getElementById("user_div").style.display = "block";
-  document.getElementById("register_div").style.display = "block";
-}
-
-function registeruser(){
-  var email = document.getElementById("email_field").value;
-  var password = document.getElementById("password_field").value;
-
-  firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
-  // Handle Errors here.
-  var errorCode = error.code;
-  var errorMessage = error.message;
-
-  window.alert("Error : " + errorMessage)
-  // ...
-});
 
 }
