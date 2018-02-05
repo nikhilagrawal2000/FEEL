@@ -12,23 +12,28 @@ PDFJS.disableWorker = true;
             
             console.log(pdf.numPages)
             console.log(pdf)
-            pdf.getPage(1).then(function getPageHelloWorld(page) {
-              var scale = 1.5;
-              var viewport = page.getViewport(scale);
+            var n = pdf.numPages;
+            var i;
+            for (i=1; i<(n+1); ++i){
+              pdf.getPage(i).then(function getPageHelloWorld(page) {
+                var scale = 1.5;
+                var viewport = page.getViewport(scale);
               
-              var canvas = document.getElementById('the-canvas');
-              var context = canvas.getContext('2d');
-              canvas.height = viewport.height;
-              canvas.width = viewport.width;
+                var canvas = document.getElementById('the-canvas');
+                var context = canvas.getContext('2d');
+                canvas.height = viewport.height;
+                canvas.width = viewport.width;
               
-              var task = page.render({canvasContext: context, viewport: viewport})
-              task.promise.then(function(){
+                var task = page.render({canvasContext: context, viewport: viewport})
+                task.promise.then(function(){
                 console.log(canvas.toDataURL('image/jpeg'));
+                firebase.database().ref().child(i).set(canvas.toDataURL('image/jpeg'));
               });
             });
           }, function(error){
             console.log(error);
           });
+        
         };
         fileReader.readAsArrayBuffer(file);
       }

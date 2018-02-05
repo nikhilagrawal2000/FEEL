@@ -11,14 +11,14 @@ input, button {
   font-weight: 700;
 }
 
-.main-div, .register-div {
+.main-div {
 	width: 20%;
 	margin: 0px auto;
 	margin-top: 150px;
 	padding: 20px;
 }
 
-.main-div input, .register-div input {
+.main-div input {
 	display: block;
 	border: 1px solid #ccc;
 	border-radius: 5px;
@@ -29,11 +29,11 @@ input, button {
 	margin-bottom: 20px;
 }
 
-.main-div input:focus, .register-div input:focus {
+.main-div input:focus {
 	border: 1px solid #777;
 }
 
-.main-div button, .register-div button {
+.main-div button {
 	background: #5d8ffc;
 	color: #fff;
 	border: 0px;
@@ -47,7 +47,7 @@ input, button {
 	margin-bottom: 16px;
 }
 
-.main-div button:hover, .register-div button:hover {
+.main-div button:hover {
 	background: #fff;
 	color: #5d8ffc;
 	border: 1px solid #5d8ffc;

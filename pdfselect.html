@@ -1,52 +1,39 @@
-<script src="http://cdnjs.cloudflare.com/ajax/libs/processing.js/1.4.1/processing-api.min.js"></script><html>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Select PDF</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet"/>
+    <link rel="stylesheet" href="style.css" />
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/processing.js/1.4.1/processing-api.min.js"></script>
+
+</head>
 
 <body>
-  <canvas id="the-canvas" style="border:1px solid black" width="0" height="0"></canvas>
-  <input id='pdf' type='file'/>
+  <div class="main-div">
+    <h3>Select PDF from your storage.</h3>
+    <canvas id="the-canvas" style="border: 0px solid black" width="0" height="0"></canvas>
   
-  <img id="imghere"></img>
+    <input id='pdf' type='file/'>
 
- 
+    <button onclick="logout()">Log Out</button>
+  </div>
+
   <script type="text/javascript" src="https://rawgithub.com/mozilla/pdf.js/gh-pages/build/pdf.js"></script>
-  
-  <script type="text/javascript">
-    
-    PDFJS.disableWorker = true;
-    
-    var pdf = document.getElementById('pdf');
-    pdf.onchange = function(ev) {
-      if (file = document.getElementById('pdf').files[0]) {
-        fileReader = new FileReader();
-        fileReader.onload = function(ev) {
-          console.log(ev);
-          PDFJS.getDocument(fileReader.result).then(function getPdfHelloWorld(pdf) {
-            
-            console.log(pdf)
-            pdf.getPage(1).then(function getPageHelloWorld(page) {
-              var scale = 1.5;
-              var viewport = page.getViewport(scale);
-              
-              var canvas = document.getElementById('the-canvas');
-              var context = canvas.getContext('2d');
-              canvas.height = viewport.height;
-              canvas.width = viewport.width;
-              
-              var task = page.render({canvasContext: context, viewport: viewport})
-              task.promise.then(function(){
-                console.log(canvas.toDataURL('image/jpeg'));
-                var img = document.getElementById("imghere");
-                img.src = canvas.toDataURL('image/jpeg');
-              });
-            });
-          }, function(error){
-            console.log(error);
-          });
-        };
-        fileReader.readAsArrayBuffer(file);
-      }
-    }
+  <script src="https://www.gstatic.com/firebasejs/4.9.1/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyCazlk5ba8VanRAm4G5MsZAmRitcuzrxJI",
+        authDomain: "feel-21310.firebaseapp.com",
+        databaseURL: "https://feel-21310.firebaseio.com",
+        projectId: "feel-21310",
+        storageBucket: "",
+        messagingSenderId: "31521909402"
+      };
+      firebase.initializeApp(config);
   </script>
- 
+ <script type="text/javascript" src="pdfselect.js"></script>
 
 <style id="jsbin-css">
 </style>
