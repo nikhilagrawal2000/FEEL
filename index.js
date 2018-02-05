@@ -36,7 +36,7 @@ function login(){
 
 function register(){
   document.getElementById("user_div").style.display = "block";
-  document.getElementById("register_div").style.display = "none";
+  document.getElementById("register_div").style.display = "block";
 }
 
 function registeruser(){
