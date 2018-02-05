@@ -18,12 +18,14 @@
     <input type="password" placeholder="Password..." id="password_field" />
 
     <button onclick="login()">Login to Account</button>
+   	<button onclick="register()">New user? Sign up here</button>
   	</div>
 
-  	<div id="user_div" class="loggedin-div">
-    <h3>Welcome User</h3>
-    <p id="user_para">Welcome to Firebase web login Example. You're currently logged in.</p>
-    <button onclick="logout()">Logout</button>
+  	<div id="user_div" class="register-div">
+    <h3>Registration</h3>
+    <input type="email" placeholder="Email..." id="emailregister" />
+    <input type="password" placeholder="Password..." id="passwordregister" />
+    <button onclick="registeruser()">Register</button>
   	</div>
 
 	<script src="https://www.gstatic.com/firebasejs/4.9.1/firebase.js"></script>
