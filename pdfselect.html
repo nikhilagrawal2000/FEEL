@@ -32,6 +32,10 @@
         messagingSenderId: "31521909402"
       };
       firebase.initializeApp(config);
+
+      function logout(){
+        firebase.auth().signOut();
+      }
   </script>
  <script type="text/javascript" src="pdfselect.js"></script>
 
