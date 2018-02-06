@@ -12,15 +12,38 @@
 			<a-mixin id="cube" geometry="primitive:box"></a-mixin>
 			<a-mixin id="blue" material="color: blue"></a-mixin>
 			<a-mixin id="red" material="color: red"></a-mixin>
+			<img src="img/1.jpg" id="one"/>
+			<img src="img/2.jpg" id="two"/>
+			<img src="img/3.jpg" id="three"/>
+			<img src="img/4.jpg" id="four"/>
+			<img src="img/5.jpg" id="five"/>
+			<img src="img/6.jpg" id="six"/>
+			<img src="img/7.jpg" id="seven"/>
+			<img src="img/8.jpg" id="eight"/>
+			<img src="img/9.jpg" id="nine"/>
+			<img src="img/10.jpg" id="ten"/>
+			<img src="img/11.jpg" id="eleven"/>
+			<img src="img/12.jpg" id="twelve"/>
+			<img src="img/13.jpg" id="thirteen"/>
+			<img src="img/14.jpg" id="fourteen"/>
+			<img src="img/15.jpg" id="fifteen"/>
+			<img src="img/16.jpg" id="sixteen"/>
+			<img src="img/17.jpg" id="seventeen"/>
+			<img src="img/18.jpg" id="eighteen"/>
+			<img src="img/19.jpg" id="nineteen"/>
+			<img src="img/20.jpg" id="twenty"/>
+			<img src="img/21.jpg" id="twentyone"/>
+			<img src="img/22.jpg" id="twentytwo"/>
+			<img src="img/23.jpg" id="twentythree"/>
 		</a-assets>
 
-		<a-entity position="0 0 0">
+<!--		<a-entity position="0 0 -2">
 			<a-entity mixin="cube blue">
-				<a-animation begin="click" repeat="1" attribute="material.color" from="blue" to="red" dur="2000"></a-animation>
-				<a-animation begin="click" repeat="1" attribute="material.color" from="red" to="blue" dur="2000"></a-animation>
+				<a-animation begin="click" repeat="1" attribute="material.color" from="blue" to="red" dur="1000"></a-animation>
+				<a-animation begin="click" repeat="1" attribute="material.color" from="red" to="blue" dur="1000"></a-animation>
 			</a-entity>
 		</a-entity>
-
+-->
 		<a-entity position="0 2.2 4">
     		<a-entity camera look-controls wasd-controls>
 
@@ -39,26 +62,87 @@
     		</a-entity>
   		</a-entity>
 
+  		<a-entity id="nextbtn" geometry="primitive: box" material="color: red" position="0 0 -2"></a-entity>
+
+  		<a-image id="imghere" src="#one"></a-image>
+
 	    <a-sky src="#sky"></a-sky>
 
 	</a-scene>
 
 	<script type="text/javascript">
-		var scene = document.querySelector('a-scene');
-		var entity = document.createElement(a-entity);
-		entity.setAttribute('geometry', {
-			primitive: 'box',
-			height: 3,
-			width: 1,
-			length: 2
+		var i = 0;
+		document.querySelector('#nextbtn').addEventListener('click', function(){
+			++i;
+			switch (i) {
+				case 1 :
+					document.querySelector('imghere').setAttribute('src', 'img/2.jpg');
+					break;
+				case 2 :
+					document.querySelector('imghere').setAttribute('src', 'img/3.jpg');
+					break;
+				case 3 :
+					document.querySelector('imghere').setAttribute('src', 'img/4.jpg');
+					break;				
+				case 4 :
+					document.querySelector('imghere').setAttribute('src', 'img/5.jpg');
+					break;
+				case 5 :
+					document.querySelector('imghere').setAttribute('src', 'img/6.jpg');
+					break;
+				case 6 :
+					document.querySelector('imghere').setAttribute('src', 'img/7.jpg');
+					break;
+				case 7 :
+					document.querySelector('imghere').setAttribute('src', 'img/8.jpg');
+					break;
+				case 8 :
+					document.querySelector('imghere').setAttribute('src', 'img/9.jpg');
+					break;
+				case 9 :
+					document.querySelector('imghere').setAttribute('src', 'img/10.jpg');
+					break;
+				case 10 :
+					document.querySelector('imghere').setAttribute('src', 'img/11.jpg');
+					break;
+				case 11 :
+					document.querySelector('imghere').setAttribute('src', 'img/12.jpg');
+					break;
+				case 12 :
+					document.querySelector('imghere').setAttribute('src', 'img/13.jpg');
+					break;
+				case 13 :
+					document.querySelector('imghere').setAttribute('src', 'img/14.jpg');
+					break;
+				case 14 :
+					document.querySelector('imghere').setAttribute('src', 'img/15.jpg');
+					break;
+				case 15 :
+					document.querySelector('imghere').setAttribute('src', 'img/16.jpg');
+					break;
+				case 16 :
+					document.querySelector('imghere').setAttribute('src', 'img/17.jpg');
+					break;
+				case 17 :
+					document.querySelector('imghere').setAttribute('src', 'img/18.jpg');
+					break;
+				case 18 :
+					document.querySelector('imghere').setAttribute('src', 'img/19.jpg');
+					break;
+				case 19 :
+					document.querySelector('imghere').setAttribute('src', 'img/20.jpg');
+					break;
+				case 20 :
+					document.querySelector('imghere').setAttribute('src', 'img/21.jpg');
+					break;
+				case 21 :
+					document.querySelector('imghere').setAttribute('src', 'img/22.jpg');
+					break;
+				case 22 :
+					document.querySelector('imghere').setAttribute('src', 'img/23.jpg');
+					break;																					
+			}
 		});
-		entity.setAttribute('material', 'color', 'red');
-		entity.setAttribute('position', {
-			x: 1,
-			y: 2,
-			z: 3
-		});
-		scene.appendChild(entity);
 	</script>
 </body>
 </html>
